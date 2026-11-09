@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoboSaathi</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <section id="splash" class="splash">
+    <div class="robot">🤖</div>
+    <h1>RoboSaathi</h1>
+    <p>Hello! Your friendly chat companion is here.</p>
+    <button id="startButton">Let’s chat</button>
+  </section>
+
+  <main id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand"><span>🤖</span> RoboSaathi</div>
+      <button id="newChatButton" class="new-chat">＋ New chat</button>
+      <div class="history-heading">Your chats</div>
+      <div id="historyList" class="history-list"></div>
+      <button id="clearHistoryButton" class="clear-history">🗑 Clear history</button>
+      <div class="sidebar-note">A little chat, a lot of smiles ✨</div>
+    </aside>
+
+    <section class="chat-panel">
+      <header class="topbar">
+        <div>
+          <h2>RoboSaathi <span class="online-dot"></span></h2>
+          <p>Your friendly chatbot</p>
+        </div>
+        <button id="deleteChatButton" class="icon-button" title="Delete this chat">🗑</button>
+      </header>
+
+      <div id="messages" class="messages">
+        <div class="welcome-card">
+          <div class="welcome-robot">🤖</div>
+          <h1>Hey there! 👋</h1>
+          <p>I’m RoboSaathi. Say hello, ask how I’m doing, or tell me your name!</p>
+          <div class="suggestions">
+            <button class="suggestion">Hello!</button>
+            <button class="suggestion">How are you?</button>
+            <button class="suggestion">What can you do?</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="attachmentPreview" class="attachment-preview"></div>
+      <div class="composer">
+        <div class="attach-buttons">
+          <label class="attach-button" title="Attach an image">🖼️<input type="file" accept="image/*" hidden></label>
+          <label class="attach-button" title="Attach a document">📄<input type="file" accept=".pdf,.doc,.docx,.txt" hidden></label>
+          <label class="attach-button" title="Attach a video">🎥<input type="file" accept="video/*" hidden></label>
+        </div>
+        <textarea id="messageInput" rows="1" placeholder="Message RoboSaathi..."></textarea>
+        <button id="sendButton" class="send-button" title="Send message">➤</button>
+      </div>
+      <p class="disclaimer">Attachments can be selected and previewed. This demo chatbot uses simple replies.</p>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
